@@ -1,0 +1,16 @@
+grammar org.xtext.example.flowexp.Flowexp with org.eclipse.xtext.common.Terminals
+
+generate flowexp "http://www.xtext.org/example/flowexp/Flowexp"
+
+Model:
+	'people'
+	people+=Person*
+	'greetings'
+	greetings+=Greeting*;
+	
+Person:
+	"person" name=STRING ';'
+;
+	
+Greeting:
+	'Hello' person=[Person] '!';
