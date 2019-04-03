@@ -68,22 +68,40 @@ public interface FlowexpPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>People</b></em>' containment reference list.
+   * The feature id for the '<em><b>Expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__PEOPLE = 0;
+  int MODEL__EXPR = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Phase</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 1;
+  int MODEL__PHASE = 1;
+
+  /**
+   * The feature id for the '<em><b>Modelname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__MODELNAME = 2;
+
+  /**
+   * The feature id for the '<em><b>Init</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MODEL__INIT = 3;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -92,63 +110,138 @@ public interface FlowexpPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MODEL_FEATURE_COUNT = 2;
+  int MODEL_FEATURE_COUNT = 4;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.flowexp.flowexp.impl.PersonImpl <em>Person</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.flowexp.flowexp.impl.ExpNbImpl <em>Exp Nb</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.flowexp.flowexp.impl.PersonImpl
-   * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getPerson()
+   * @see org.xtext.example.flowexp.flowexp.impl.ExpNbImpl
+   * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getExpNb()
    * @generated
    */
-  int PERSON = 1;
+  int EXP_NB = 1;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PERSON__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Person</em>' class.
+   * The number of structural features of the '<em>Exp Nb</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PERSON_FEATURE_COUNT = 1;
+  int EXP_NB_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.flowexp.flowexp.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link org.xtext.example.flowexp.flowexp.impl.InitImpl <em>Init</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.example.flowexp.flowexp.impl.GreetingImpl
-   * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getGreeting()
+   * @see org.xtext.example.flowexp.flowexp.impl.InitImpl
+   * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getInit()
    * @generated
    */
-  int GREETING = 2;
+  int INIT = 2;
 
   /**
-   * The feature id for the '<em><b>Person</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GREETING__PERSON = 0;
-
-  /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The number of structural features of the '<em>Init</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int INIT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.flowexp.flowexp.impl.InitOneImpl <em>Init One</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.flowexp.flowexp.impl.InitOneImpl
+   * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getInitOne()
+   * @generated
+   */
+  int INIT_ONE = 3;
+
+  /**
+   * The feature id for the '<em><b>Filename</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INIT_ONE__FILENAME = INIT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Tval</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INIT_ONE__TVAL = INIT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Pval</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INIT_ONE__PVAL = INIT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Srval</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INIT_ONE__SRVAL = INIT_FEATURE_COUNT + 3;
+
+  /**
+   * The number of structural features of the '<em>Init One</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INIT_ONE_FEATURE_COUNT = INIT_FEATURE_COUNT + 4;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.flowexp.flowexp.impl.ExpNbBatchImpl <em>Exp Nb Batch</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.flowexp.flowexp.impl.ExpNbBatchImpl
+   * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getExpNbBatch()
+   * @generated
+   */
+  int EXP_NB_BATCH = 4;
+
+  /**
+   * The number of structural features of the '<em>Exp Nb Batch</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXP_NB_BATCH_FEATURE_COUNT = EXP_NB_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.flowexp.flowexp.impl.ExpNbOneImpl <em>Exp Nb One</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.flowexp.flowexp.impl.ExpNbOneImpl
+   * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getExpNbOne()
+   * @generated
+   */
+  int EXP_NB_ONE = 5;
+
+  /**
+   * The number of structural features of the '<em>Exp Nb One</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXP_NB_ONE_FEATURE_COUNT = EXP_NB_FEATURE_COUNT + 0;
 
 
   /**
@@ -162,68 +255,142 @@ public interface FlowexpPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.flowexp.flowexp.Model#getPeople <em>People</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.flowexp.flowexp.Model#getExpr <em>Expr</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>People</em>'.
-   * @see org.xtext.example.flowexp.flowexp.Model#getPeople()
+   * @return the meta object for the containment reference '<em>Expr</em>'.
+   * @see org.xtext.example.flowexp.flowexp.Model#getExpr()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_People();
+  EReference getModel_Expr();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.flowexp.flowexp.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.flowexp.flowexp.Model#getPhase <em>Phase</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see org.xtext.example.flowexp.flowexp.Model#getGreetings()
+   * @return the meta object for the attribute '<em>Phase</em>'.
+   * @see org.xtext.example.flowexp.flowexp.Model#getPhase()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
+  EAttribute getModel_Phase();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.flowexp.flowexp.Person <em>Person</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.example.flowexp.flowexp.Model#getModelname <em>Modelname</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Person</em>'.
-   * @see org.xtext.example.flowexp.flowexp.Person
+   * @return the meta object for the attribute '<em>Modelname</em>'.
+   * @see org.xtext.example.flowexp.flowexp.Model#getModelname()
+   * @see #getModel()
    * @generated
    */
-  EClass getPerson();
+  EAttribute getModel_Modelname();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.flowexp.flowexp.Person#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.flowexp.flowexp.Model#getInit <em>Init</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.flowexp.flowexp.Person#getName()
-   * @see #getPerson()
+   * @return the meta object for the containment reference '<em>Init</em>'.
+   * @see org.xtext.example.flowexp.flowexp.Model#getInit()
+   * @see #getModel()
    * @generated
    */
-  EAttribute getPerson_Name();
+  EReference getModel_Init();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.flowexp.flowexp.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.flowexp.flowexp.ExpNb <em>Exp Nb</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see org.xtext.example.flowexp.flowexp.Greeting
+   * @return the meta object for class '<em>Exp Nb</em>'.
+   * @see org.xtext.example.flowexp.flowexp.ExpNb
    * @generated
    */
-  EClass getGreeting();
+  EClass getExpNb();
 
   /**
-   * Returns the meta object for the reference '{@link org.xtext.example.flowexp.flowexp.Greeting#getPerson <em>Person</em>}'.
+   * Returns the meta object for class '{@link org.xtext.example.flowexp.flowexp.Init <em>Init</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Person</em>'.
-   * @see org.xtext.example.flowexp.flowexp.Greeting#getPerson()
-   * @see #getGreeting()
+   * @return the meta object for class '<em>Init</em>'.
+   * @see org.xtext.example.flowexp.flowexp.Init
    * @generated
    */
-  EReference getGreeting_Person();
+  EClass getInit();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.flowexp.flowexp.InitOne <em>Init One</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Init One</em>'.
+   * @see org.xtext.example.flowexp.flowexp.InitOne
+   * @generated
+   */
+  EClass getInitOne();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.example.flowexp.flowexp.InitOne#getFilename <em>Filename</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Filename</em>'.
+   * @see org.xtext.example.flowexp.flowexp.InitOne#getFilename()
+   * @see #getInitOne()
+   * @generated
+   */
+  EAttribute getInitOne_Filename();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.flowexp.flowexp.InitOne#getTval <em>Tval</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Tval</em>'.
+   * @see org.xtext.example.flowexp.flowexp.InitOne#getTval()
+   * @see #getInitOne()
+   * @generated
+   */
+  EAttribute getInitOne_Tval();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.flowexp.flowexp.InitOne#getPval <em>Pval</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Pval</em>'.
+   * @see org.xtext.example.flowexp.flowexp.InitOne#getPval()
+   * @see #getInitOne()
+   * @generated
+   */
+  EAttribute getInitOne_Pval();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.flowexp.flowexp.InitOne#getSrval <em>Srval</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Srval</em>'.
+   * @see org.xtext.example.flowexp.flowexp.InitOne#getSrval()
+   * @see #getInitOne()
+   * @generated
+   */
+  EAttribute getInitOne_Srval();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.flowexp.flowexp.ExpNbBatch <em>Exp Nb Batch</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Exp Nb Batch</em>'.
+   * @see org.xtext.example.flowexp.flowexp.ExpNbBatch
+   * @generated
+   */
+  EClass getExpNbBatch();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.flowexp.flowexp.ExpNbOne <em>Exp Nb One</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Exp Nb One</em>'.
+   * @see org.xtext.example.flowexp.flowexp.ExpNbOne
+   * @generated
+   */
+  EClass getExpNbOne();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -259,56 +426,118 @@ public interface FlowexpPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>People</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Expr</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__PEOPLE = eINSTANCE.getModel_People();
+    EReference MODEL__EXPR = eINSTANCE.getModel_Expr();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Phase</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EAttribute MODEL__PHASE = eINSTANCE.getModel_Phase();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.flowexp.flowexp.impl.PersonImpl <em>Person</em>}' class.
+     * The meta object literal for the '<em><b>Modelname</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.flowexp.flowexp.impl.PersonImpl
-     * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getPerson()
      * @generated
      */
-    EClass PERSON = eINSTANCE.getPerson();
+    EAttribute MODEL__MODELNAME = eINSTANCE.getModel_Modelname();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Init</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute PERSON__NAME = eINSTANCE.getPerson_Name();
+    EReference MODEL__INIT = eINSTANCE.getModel_Init();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.flowexp.flowexp.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '{@link org.xtext.example.flowexp.flowexp.impl.ExpNbImpl <em>Exp Nb</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.example.flowexp.flowexp.impl.GreetingImpl
-     * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getGreeting()
+     * @see org.xtext.example.flowexp.flowexp.impl.ExpNbImpl
+     * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getExpNb()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EClass EXP_NB = eINSTANCE.getExpNb();
 
     /**
-     * The meta object literal for the '<em><b>Person</b></em>' reference feature.
+     * The meta object literal for the '{@link org.xtext.example.flowexp.flowexp.impl.InitImpl <em>Init</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.flowexp.flowexp.impl.InitImpl
+     * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getInit()
+     * @generated
+     */
+    EClass INIT = eINSTANCE.getInit();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.flowexp.flowexp.impl.InitOneImpl <em>Init One</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.flowexp.flowexp.impl.InitOneImpl
+     * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getInitOne()
+     * @generated
+     */
+    EClass INIT_ONE = eINSTANCE.getInitOne();
+
+    /**
+     * The meta object literal for the '<em><b>Filename</b></em>' attribute list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference GREETING__PERSON = eINSTANCE.getGreeting_Person();
+    EAttribute INIT_ONE__FILENAME = eINSTANCE.getInitOne_Filename();
+
+    /**
+     * The meta object literal for the '<em><b>Tval</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INIT_ONE__TVAL = eINSTANCE.getInitOne_Tval();
+
+    /**
+     * The meta object literal for the '<em><b>Pval</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INIT_ONE__PVAL = eINSTANCE.getInitOne_Pval();
+
+    /**
+     * The meta object literal for the '<em><b>Srval</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute INIT_ONE__SRVAL = eINSTANCE.getInitOne_Srval();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.flowexp.flowexp.impl.ExpNbBatchImpl <em>Exp Nb Batch</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.flowexp.flowexp.impl.ExpNbBatchImpl
+     * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getExpNbBatch()
+     * @generated
+     */
+    EClass EXP_NB_BATCH = eINSTANCE.getExpNbBatch();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.flowexp.flowexp.impl.ExpNbOneImpl <em>Exp Nb One</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.flowexp.flowexp.impl.ExpNbOneImpl
+     * @see org.xtext.example.flowexp.flowexp.impl.FlowexpPackageImpl#getExpNbOne()
+     * @generated
+     */
+    EClass EXP_NB_ONE = eINSTANCE.getExpNbOne();
 
   }
 

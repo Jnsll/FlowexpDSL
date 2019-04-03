@@ -7,14 +7,20 @@
   <genPackages prefix="Flowexp" basePackage="org.xtext.example.flowexp" disposableProviderFactory="true"
       fileExtensions="flowexp" ecorePackage="Flowexp.ecore#/">
     <genClasses ecoreClass="Flowexp.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Flowexp.ecore#//Model/people"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Flowexp.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Flowexp.ecore#//Model/expr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Flowexp.ecore#//Model/phase"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Flowexp.ecore#//Model/modelname"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Flowexp.ecore#//Model/init"/>
     </genClasses>
-    <genClasses ecoreClass="Flowexp.ecore#//Person">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Flowexp.ecore#//Person/name"/>
+    <genClasses ecoreClass="Flowexp.ecore#//ExpNb"/>
+    <genClasses ecoreClass="Flowexp.ecore#//Init"/>
+    <genClasses ecoreClass="Flowexp.ecore#//InitOne">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Flowexp.ecore#//InitOne/filename"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Flowexp.ecore#//InitOne/tval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Flowexp.ecore#//InitOne/pval"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Flowexp.ecore#//InitOne/srval"/>
     </genClasses>
-    <genClasses ecoreClass="Flowexp.ecore#//Greeting">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Flowexp.ecore#//Greeting/person"/>
-    </genClasses>
+    <genClasses ecoreClass="Flowexp.ecore#//ExpNbBatch"/>
+    <genClasses ecoreClass="Flowexp.ecore#//ExpNbOne"/>
   </genPackages>
 </genmodel:GenModel>

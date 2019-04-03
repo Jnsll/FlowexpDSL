@@ -14,10 +14,11 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.xtext.example.flowexp.flowexp.ExpNbBatch;
+import org.xtext.example.flowexp.flowexp.ExpNbOne;
 import org.xtext.example.flowexp.flowexp.FlowexpPackage;
-import org.xtext.example.flowexp.flowexp.Greeting;
+import org.xtext.example.flowexp.flowexp.InitOne;
 import org.xtext.example.flowexp.flowexp.Model;
-import org.xtext.example.flowexp.flowexp.Person;
 import org.xtext.example.flowexp.services.FlowexpGrammarAccess;
 
 @SuppressWarnings("all")
@@ -34,14 +35,17 @@ public class FlowexpSemanticSequencer extends AbstractDelegatingSemanticSequence
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == FlowexpPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case FlowexpPackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case FlowexpPackage.EXP_NB_BATCH:
+				sequence_ExpNb(context, (ExpNbBatch) semanticObject); 
+				return; 
+			case FlowexpPackage.EXP_NB_ONE:
+				sequence_ExpNb(context, (ExpNbOne) semanticObject); 
+				return; 
+			case FlowexpPackage.INIT_ONE:
+				sequence_InitOne(context, (InitOne) semanticObject); 
 				return; 
 			case FlowexpPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
-				return; 
-			case FlowexpPackage.PERSON:
-				sequence_Person(context, (Person) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -50,19 +54,38 @@ public class FlowexpSemanticSequencer extends AbstractDelegatingSemanticSequence
 	
 	/**
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     ExpNb returns ExpNbBatch
 	 *
 	 * Constraint:
-	 *     person=[Person|ID]
+	 *     {ExpNbBatch}
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, FlowexpPackage.Literals.GREETING__PERSON) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowexpPackage.Literals.GREETING__PERSON));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getPersonPersonIDTerminalRuleCall_1_0_1(), semanticObject.eGet(FlowexpPackage.Literals.GREETING__PERSON, false));
-		feeder.finish();
+	protected void sequence_ExpNb(ISerializationContext context, ExpNbBatch semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     ExpNb returns ExpNbOne
+	 *
+	 * Constraint:
+	 *     {ExpNbOne}
+	 */
+	protected void sequence_ExpNb(ISerializationContext context, ExpNbOne semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Init returns InitOne
+	 *     InitOne returns InitOne
+	 *
+	 * Constraint:
+	 *     (filename+=STRING filename+=STRING* tval=INT pval=INT srval=INT)
+	 */
+	protected void sequence_InitOne(ISerializationContext context, InitOne semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -71,27 +94,24 @@ public class FlowexpSemanticSequencer extends AbstractDelegatingSemanticSequence
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (people+=Person* greetings+=Greeting*)
+	 *     (expr=ExpNb phase=Phase modelname=STRING init=Init)
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Person returns Person
-	 *
-	 * Constraint:
-	 *     name=STRING
-	 */
-	protected void sequence_Person(ISerializationContext context, Person semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, FlowexpPackage.Literals.PERSON__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowexpPackage.Literals.PERSON__NAME));
+			if (transientValues.isValueTransient(semanticObject, FlowexpPackage.Literals.MODEL__EXPR) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowexpPackage.Literals.MODEL__EXPR));
+			if (transientValues.isValueTransient(semanticObject, FlowexpPackage.Literals.MODEL__PHASE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowexpPackage.Literals.MODEL__PHASE));
+			if (transientValues.isValueTransient(semanticObject, FlowexpPackage.Literals.MODEL__MODELNAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowexpPackage.Literals.MODEL__MODELNAME));
+			if (transientValues.isValueTransient(semanticObject, FlowexpPackage.Literals.MODEL__INIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, FlowexpPackage.Literals.MODEL__INIT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPersonAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getModelAccess().getExprExpNbParserRuleCall_2_0(), semanticObject.getExpr());
+		feeder.accept(grammarAccess.getModelAccess().getPhasePhaseParserRuleCall_5_0(), semanticObject.getPhase());
+		feeder.accept(grammarAccess.getModelAccess().getModelnameSTRINGTerminalRuleCall_8_0(), semanticObject.getModelname());
+		feeder.accept(grammarAccess.getModelAccess().getInitInitParserRuleCall_11_0(), semanticObject.getInit());
 		feeder.finish();
 	}
 	

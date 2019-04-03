@@ -21,9 +21,14 @@ class FlowexpGenerator extends AbstractGenerator {
 		val prog = resource.contents.head as Model
 		
 		fsa.generateFile('example/run.sh', '''
-		«FOR greeting: prog.greetings»
-		echo "Hello" "«greeting.person.name»";
-		«ENDFOR»
+«««		«FOR greeting: prog.greetings»
+«««		echo "Hello" "«greeting.person.name»";
+«««		«ENDFOR»
+		
+		
+		echo "python SimulationPipeline.py -m " "«prog.»"
 		''')
 	}
+		
+		
 }

@@ -3,16 +3,10 @@
  */
 package org.xtext.example.flowexp.generator;
 
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
-import org.xtext.example.flowexp.flowexp.Greeting;
-import org.xtext.example.flowexp.flowexp.Model;
 
 /**
  * Generates code from your model files on save.
@@ -23,19 +17,7 @@ import org.xtext.example.flowexp.flowexp.Model;
 public class FlowexpGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    EObject _head = IterableExtensions.<EObject>head(resource.getContents());
-    final Model prog = ((Model) _head);
-    StringConcatenation _builder = new StringConcatenation();
-    {
-      EList<Greeting> _greetings = prog.getGreetings();
-      for(final Greeting greeting : _greetings) {
-        _builder.append("echo \"Hello\" \"");
-        String _name = greeting.getPerson().getName();
-        _builder.append(_name);
-        _builder.append("\";");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    fsa.generateFile("example/run.sh", _builder);
+    throw new Error("Unresolved compilation problems:"
+      + "\nno viable alternative at input \'»\"\\n\\t\\t\'\'\'\'");
   }
 }

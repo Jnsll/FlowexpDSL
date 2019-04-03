@@ -6,8 +6,9 @@ package org.xtext.example.flowexp.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Action;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
-import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -25,104 +26,289 @@ public class FlowexpGrammarAccess extends AbstractGrammarElementFinder {
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.flowexp.Flowexp.Model");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPeopleKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cPeopleAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cPeoplePersonParserRuleCall_1_0 = (RuleCall)cPeopleAssignment_1.eContents().get(0);
-		private final Keyword cGreetingsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cGreetingsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cGreetingsGreetingParserRuleCall_3_0 = (RuleCall)cGreetingsAssignment_3.eContents().get(0);
+		private final Keyword cSchemaKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cColonKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cExprAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cExprExpNbParserRuleCall_2_0 = (RuleCall)cExprAssignment_2.eContents().get(0);
+		private final Keyword cPhaseKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cColonKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPhaseAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPhasePhaseParserRuleCall_5_0 = (RuleCall)cPhaseAssignment_5.eContents().get(0);
+		private final Keyword cModelnameKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cModelnameAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cModelnameSTRINGTerminalRuleCall_8_0 = (RuleCall)cModelnameAssignment_8.eContents().get(0);
+		private final Keyword cInitKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cColonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cInitAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cInitInitParserRuleCall_11_0 = (RuleCall)cInitAssignment_11.eContents().get(0);
 		
 		//Model:
-		//	'people'
-		//	people+=Person*
-		//	'greetings'
-		//	greetings+=Greeting*;
+		//	'Schema' ':' expr=ExpNb
+		//	'Phase' ':' phase=Phase
+		//	'Modelname' ':' modelname=STRING
+		//	'Init' ':' init=Init;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'people' people+=Person* 'greetings' greetings+=Greeting*
+		//'Schema' ':' expr=ExpNb 'Phase' ':' phase=Phase 'Modelname' ':' modelname=STRING 'Init' ':' init=Init
 		public Group getGroup() { return cGroup; }
 		
-		//'people'
-		public Keyword getPeopleKeyword_0() { return cPeopleKeyword_0; }
+		//'Schema'
+		public Keyword getSchemaKeyword_0() { return cSchemaKeyword_0; }
 		
-		//people+=Person*
-		public Assignment getPeopleAssignment_1() { return cPeopleAssignment_1; }
+		//':'
+		public Keyword getColonKeyword_1() { return cColonKeyword_1; }
 		
-		//Person
-		public RuleCall getPeoplePersonParserRuleCall_1_0() { return cPeoplePersonParserRuleCall_1_0; }
+		//expr=ExpNb
+		public Assignment getExprAssignment_2() { return cExprAssignment_2; }
 		
-		//'greetings'
-		public Keyword getGreetingsKeyword_2() { return cGreetingsKeyword_2; }
+		//ExpNb
+		public RuleCall getExprExpNbParserRuleCall_2_0() { return cExprExpNbParserRuleCall_2_0; }
 		
-		//greetings+=Greeting*
-		public Assignment getGreetingsAssignment_3() { return cGreetingsAssignment_3; }
+		//'Phase'
+		public Keyword getPhaseKeyword_3() { return cPhaseKeyword_3; }
 		
-		//Greeting
-		public RuleCall getGreetingsGreetingParserRuleCall_3_0() { return cGreetingsGreetingParserRuleCall_3_0; }
-	}
-	public class PersonElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.flowexp.Flowexp.Person");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cPersonKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		//':'
+		public Keyword getColonKeyword_4() { return cColonKeyword_4; }
 		
-		//Person:
-		//	"person" name=STRING ';';
-		@Override public ParserRule getRule() { return rule; }
+		//phase=Phase
+		public Assignment getPhaseAssignment_5() { return cPhaseAssignment_5; }
 		
-		//"person" name=STRING ';'
-		public Group getGroup() { return cGroup; }
+		//Phase
+		public RuleCall getPhasePhaseParserRuleCall_5_0() { return cPhasePhaseParserRuleCall_5_0; }
 		
-		//"person"
-		public Keyword getPersonKeyword_0() { return cPersonKeyword_0; }
+		//'Modelname'
+		public Keyword getModelnameKeyword_6() { return cModelnameKeyword_6; }
 		
-		//name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//':'
+		public Keyword getColonKeyword_7() { return cColonKeyword_7; }
+		
+		//modelname=STRING
+		public Assignment getModelnameAssignment_8() { return cModelnameAssignment_8; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
+		public RuleCall getModelnameSTRINGTerminalRuleCall_8_0() { return cModelnameSTRINGTerminalRuleCall_8_0; }
 		
-		//';'
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
+		//'Init'
+		public Keyword getInitKeyword_9() { return cInitKeyword_9; }
+		
+		//':'
+		public Keyword getColonKeyword_10() { return cColonKeyword_10; }
+		
+		//init=Init
+		public Assignment getInitAssignment_11() { return cInitAssignment_11; }
+		
+		//Init
+		public RuleCall getInitInitParserRuleCall_11_0() { return cInitInitParserRuleCall_11_0; }
 	}
-	public class GreetingElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.flowexp.Flowexp.Greeting");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cHelloKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cPersonAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cPersonPersonCrossReference_1_0 = (CrossReference)cPersonAssignment_1.eContents().get(0);
-		private final RuleCall cPersonPersonIDTerminalRuleCall_1_0_1 = (RuleCall)cPersonPersonCrossReference_1_0.eContents().get(1);
-		private final Keyword cExclamationMarkKeyword_2 = (Keyword)cGroup.eContents().get(2);
+	public class ExpNbElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.flowexp.Flowexp.ExpNb");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
+		private final Action cExpNbBatchAction_0_0 = (Action)cGroup_0.eContents().get(0);
+		private final Keyword cBatchKeyword_0_1 = (Keyword)cGroup_0.eContents().get(1);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cExpNbOneAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cOneKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		
-		//Greeting:
-		//	'Hello' person=[Person] '!';
+		//ExpNb:
+		//	{ExpNbBatch} "batch" | {ExpNbOne} "one";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Hello' person=[Person] '!'
+		//{ExpNbBatch} "batch" | {ExpNbOne} "one"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//{ExpNbBatch} "batch"
+		public Group getGroup_0() { return cGroup_0; }
+		
+		//{ExpNbBatch}
+		public Action getExpNbBatchAction_0_0() { return cExpNbBatchAction_0_0; }
+		
+		//"batch"
+		public Keyword getBatchKeyword_0_1() { return cBatchKeyword_0_1; }
+		
+		//{ExpNbOne} "one"
+		public Group getGroup_1() { return cGroup_1; }
+		
+		//{ExpNbOne}
+		public Action getExpNbOneAction_1_0() { return cExpNbOneAction_1_0; }
+		
+		//"one"
+		public Keyword getOneKeyword_1_1() { return cOneKeyword_1_1; }
+	}
+	public class PhaseElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.flowexp.Flowexp.Phase");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cInitKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cForecastKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cWholeKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		
+		//Phase:
+		//	"init" | "forecast" | "whole";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"init" | "forecast" | "whole"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//"init"
+		public Keyword getInitKeyword_0() { return cInitKeyword_0; }
+		
+		//"forecast"
+		public Keyword getForecastKeyword_1() { return cForecastKeyword_1; }
+		
+		//"whole"
+		public Keyword getWholeKeyword_2() { return cWholeKeyword_2; }
+	}
+	public class InitElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.flowexp.Flowexp.Init");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cInitOneParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cInitBatchParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//Init:
+		//	InitOne | InitBatch;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//InitOne | InitBatch
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//InitOne
+		public RuleCall getInitOneParserRuleCall_0() { return cInitOneParserRuleCall_0; }
+		
+		//InitBatch
+		public RuleCall getInitBatchParserRuleCall_1() { return cInitBatchParserRuleCall_1; }
+	}
+	public class InitOneElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.flowexp.Flowexp.InitOne");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTemplateKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cFilenameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cFilenameSTRINGTerminalRuleCall_1_0 = (RuleCall)cFilenameAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cFilenameAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cFilenameSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cFilenameAssignment_2_1.eContents().get(0);
+		private final Keyword cTimestepKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cTvalAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cTvalINTTerminalRuleCall_4_0 = (RuleCall)cTvalAssignment_4.eContents().get(0);
+		private final Keyword cPeriodKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cPvalAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cPvalINTTerminalRuleCall_6_0 = (RuleCall)cPvalAssignment_6.eContents().get(0);
+		private final Keyword cPeriodicityKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final RuleCall cPeriodicityParserRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		private final Keyword cSeaRiseKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cSrvalAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cSrvalINTTerminalRuleCall_10_0 = (RuleCall)cSrvalAssignment_10.eContents().get(0);
+		
+		//InitOne:
+		//	"template" filename+=STRING ("," filename+=STRING)*
+		//	"timestep" tval=INT
+		//	"period" pval=INT
+		//	"periodicity" Periodicity
+		//	"sea rise" srval=INT;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"template" filename+=STRING ("," filename+=STRING)* "timestep" tval=INT "period" pval=INT "periodicity" Periodicity
+		//"sea rise" srval=INT
 		public Group getGroup() { return cGroup; }
 		
-		//'Hello'
-		public Keyword getHelloKeyword_0() { return cHelloKeyword_0; }
+		//"template"
+		public Keyword getTemplateKeyword_0() { return cTemplateKeyword_0; }
 		
-		//person=[Person]
-		public Assignment getPersonAssignment_1() { return cPersonAssignment_1; }
+		//filename+=STRING
+		public Assignment getFilenameAssignment_1() { return cFilenameAssignment_1; }
 		
-		//[Person]
-		public CrossReference getPersonPersonCrossReference_1_0() { return cPersonPersonCrossReference_1_0; }
+		//STRING
+		public RuleCall getFilenameSTRINGTerminalRuleCall_1_0() { return cFilenameSTRINGTerminalRuleCall_1_0; }
 		
-		//ID
-		public RuleCall getPersonPersonIDTerminalRuleCall_1_0_1() { return cPersonPersonIDTerminalRuleCall_1_0_1; }
+		//("," filename+=STRING)*
+		public Group getGroup_2() { return cGroup_2; }
 		
-		//'!'
-		public Keyword getExclamationMarkKeyword_2() { return cExclamationMarkKeyword_2; }
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+		
+		//filename+=STRING
+		public Assignment getFilenameAssignment_2_1() { return cFilenameAssignment_2_1; }
+		
+		//STRING
+		public RuleCall getFilenameSTRINGTerminalRuleCall_2_1_0() { return cFilenameSTRINGTerminalRuleCall_2_1_0; }
+		
+		//"timestep"
+		public Keyword getTimestepKeyword_3() { return cTimestepKeyword_3; }
+		
+		//tval=INT
+		public Assignment getTvalAssignment_4() { return cTvalAssignment_4; }
+		
+		//INT
+		public RuleCall getTvalINTTerminalRuleCall_4_0() { return cTvalINTTerminalRuleCall_4_0; }
+		
+		//"period"
+		public Keyword getPeriodKeyword_5() { return cPeriodKeyword_5; }
+		
+		//pval=INT
+		public Assignment getPvalAssignment_6() { return cPvalAssignment_6; }
+		
+		//INT
+		public RuleCall getPvalINTTerminalRuleCall_6_0() { return cPvalINTTerminalRuleCall_6_0; }
+		
+		//"periodicity"
+		public Keyword getPeriodicityKeyword_7() { return cPeriodicityKeyword_7; }
+		
+		//Periodicity
+		public RuleCall getPeriodicityParserRuleCall_8() { return cPeriodicityParserRuleCall_8; }
+		
+		//"sea rise"
+		public Keyword getSeaRiseKeyword_9() { return cSeaRiseKeyword_9; }
+		
+		//srval=INT
+		public Assignment getSrvalAssignment_10() { return cSrvalAssignment_10; }
+		
+		//INT
+		public RuleCall getSrvalINTTerminalRuleCall_10_0() { return cSrvalINTTerminalRuleCall_10_0; }
+	}
+	public class PeriodicityElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.flowexp.Flowexp.Periodicity");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cDailyKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cMonthlyKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cSemesterKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		
+		//Periodicity:
+		//	"daily" | "monthly" | "semester";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"daily" | "monthly" | "semester"
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//"daily"
+		public Keyword getDailyKeyword_0() { return cDailyKeyword_0; }
+		
+		//"monthly"
+		public Keyword getMonthlyKeyword_1() { return cMonthlyKeyword_1; }
+		
+		//"semester"
+		public Keyword getSemesterKeyword_2() { return cSemesterKeyword_2; }
+	}
+	public class InitBatchElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.flowexp.Flowexp.InitBatch");
+		private final Keyword cTemplateKeyword = (Keyword)rule.eContents().get(1);
+		
+		//InitBatch:
+		//	"template";
+		@Override public ParserRule getRule() { return rule; }
+		
+		//"template"
+		public Keyword getTemplateKeyword() { return cTemplateKeyword; }
 	}
 	
 	
 	private final ModelElements pModel;
-	private final PersonElements pPerson;
-	private final GreetingElements pGreeting;
+	private final ExpNbElements pExpNb;
+	private final PhaseElements pPhase;
+	private final InitElements pInit;
+	private final InitOneElements pInitOne;
+	private final PeriodicityElements pPeriodicity;
+	private final InitBatchElements pInitBatch;
 	
 	private final Grammar grammar;
 	
@@ -134,8 +320,12 @@ public class FlowexpGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pPerson = new PersonElements();
-		this.pGreeting = new GreetingElements();
+		this.pExpNb = new ExpNbElements();
+		this.pPhase = new PhaseElements();
+		this.pInit = new InitElements();
+		this.pInitOne = new InitOneElements();
+		this.pPeriodicity = new PeriodicityElements();
+		this.pInitBatch = new InitBatchElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -166,10 +356,10 @@ public class FlowexpGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	'people'
-	//	people+=Person*
-	//	'greetings'
-	//	greetings+=Greeting*;
+	//	'Schema' ':' expr=ExpNb
+	//	'Phase' ':' phase=Phase
+	//	'Modelname' ':' modelname=STRING
+	//	'Init' ':' init=Init;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -178,24 +368,68 @@ public class FlowexpGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
-	//Person:
-	//	"person" name=STRING ';';
-	public PersonElements getPersonAccess() {
-		return pPerson;
+	//ExpNb:
+	//	{ExpNbBatch} "batch" | {ExpNbOne} "one";
+	public ExpNbElements getExpNbAccess() {
+		return pExpNb;
 	}
 	
-	public ParserRule getPersonRule() {
-		return getPersonAccess().getRule();
+	public ParserRule getExpNbRule() {
+		return getExpNbAccess().getRule();
 	}
 	
-	//Greeting:
-	//	'Hello' person=[Person] '!';
-	public GreetingElements getGreetingAccess() {
-		return pGreeting;
+	//Phase:
+	//	"init" | "forecast" | "whole";
+	public PhaseElements getPhaseAccess() {
+		return pPhase;
 	}
 	
-	public ParserRule getGreetingRule() {
-		return getGreetingAccess().getRule();
+	public ParserRule getPhaseRule() {
+		return getPhaseAccess().getRule();
+	}
+	
+	//Init:
+	//	InitOne | InitBatch;
+	public InitElements getInitAccess() {
+		return pInit;
+	}
+	
+	public ParserRule getInitRule() {
+		return getInitAccess().getRule();
+	}
+	
+	//InitOne:
+	//	"template" filename+=STRING ("," filename+=STRING)*
+	//	"timestep" tval=INT
+	//	"period" pval=INT
+	//	"periodicity" Periodicity
+	//	"sea rise" srval=INT;
+	public InitOneElements getInitOneAccess() {
+		return pInitOne;
+	}
+	
+	public ParserRule getInitOneRule() {
+		return getInitOneAccess().getRule();
+	}
+	
+	//Periodicity:
+	//	"daily" | "monthly" | "semester";
+	public PeriodicityElements getPeriodicityAccess() {
+		return pPeriodicity;
+	}
+	
+	public ParserRule getPeriodicityRule() {
+		return getPeriodicityAccess().getRule();
+	}
+	
+	//InitBatch:
+	//	"template";
+	public InitBatchElements getInitBatchAccess() {
+		return pInitBatch;
+	}
+	
+	public ParserRule getInitBatchRule() {
+		return getInitBatchAccess().getRule();
 	}
 	
 	//terminal ID:

@@ -3,15 +3,21 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="flowexp" nsURI="http://www.xtext.org/example/flowexp/Flowexp"
     nsPrefix="flowexp">
   <eClassifiers xsi:type="ecore:EClass" name="Model">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="people" upperBound="-1"
-        eType="#//Person" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="greetings" upperBound="-1"
-        eType="#//Greeting" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="#//ExpNb"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="phase" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelname" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="init" eType="#//Init" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Person">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpNb"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Init"/>
+  <eClassifiers xsi:type="ecore:EClass" name="InitOne" eSuperTypes="#//Init">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="filename" unique="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="pval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="srval" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Greeting">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="person" eType="#//Person"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpNbBatch" eSuperTypes="#//ExpNb"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ExpNbOne" eSuperTypes="#//ExpNb"/>
 </ecore:EPackage>

@@ -80,17 +80,41 @@ public class FlowexpSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowexpPackage.PERSON:
+      case FlowexpPackage.EXP_NB:
       {
-        Person person = (Person)theEObject;
-        T result = casePerson(person);
+        ExpNb expNb = (ExpNb)theEObject;
+        T result = caseExpNb(expNb);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case FlowexpPackage.GREETING:
+      case FlowexpPackage.INIT:
       {
-        Greeting greeting = (Greeting)theEObject;
-        T result = caseGreeting(greeting);
+        Init init = (Init)theEObject;
+        T result = caseInit(init);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowexpPackage.INIT_ONE:
+      {
+        InitOne initOne = (InitOne)theEObject;
+        T result = caseInitOne(initOne);
+        if (result == null) result = caseInit(initOne);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowexpPackage.EXP_NB_BATCH:
+      {
+        ExpNbBatch expNbBatch = (ExpNbBatch)theEObject;
+        T result = caseExpNbBatch(expNbBatch);
+        if (result == null) result = caseExpNb(expNbBatch);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case FlowexpPackage.EXP_NB_ONE:
+      {
+        ExpNbOne expNbOne = (ExpNbOne)theEObject;
+        T result = caseExpNbOne(expNbOne);
+        if (result == null) result = caseExpNb(expNbOne);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,33 +139,81 @@ public class FlowexpSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Person</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Exp Nb</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Person</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Exp Nb</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T casePerson(Person object)
+  public T caseExpNb(ExpNb object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Init</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Greeting</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Init</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseGreeting(Greeting object)
+  public T caseInit(Init object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Init One</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Init One</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInitOne(InitOne object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Exp Nb Batch</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Exp Nb Batch</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpNbBatch(ExpNbBatch object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Exp Nb One</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Exp Nb One</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpNbOne(ExpNbOne object)
   {
     return null;
   }

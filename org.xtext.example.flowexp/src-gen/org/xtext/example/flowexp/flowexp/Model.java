@@ -3,8 +3,6 @@
  */
 package org.xtext.example.flowexp.flowexp;
 
-import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -16,8 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.flowexp.flowexp.Model#getPeople <em>People</em>}</li>
- *   <li>{@link org.xtext.example.flowexp.flowexp.Model#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link org.xtext.example.flowexp.flowexp.Model#getExpr <em>Expr</em>}</li>
+ *   <li>{@link org.xtext.example.flowexp.flowexp.Model#getPhase <em>Phase</em>}</li>
+ *   <li>{@link org.xtext.example.flowexp.flowexp.Model#getModelname <em>Modelname</em>}</li>
+ *   <li>{@link org.xtext.example.flowexp.flowexp.Model#getInit <em>Init</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.flowexp.flowexp.FlowexpPackage#getModel()
@@ -27,35 +27,107 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>People</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.flowexp.flowexp.Person}.
+   * Returns the value of the '<em><b>Expr</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>People</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Expr</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>People</em>' containment reference list.
-   * @see org.xtext.example.flowexp.flowexp.FlowexpPackage#getModel_People()
+   * @return the value of the '<em>Expr</em>' containment reference.
+   * @see #setExpr(ExpNb)
+   * @see org.xtext.example.flowexp.flowexp.FlowexpPackage#getModel_Expr()
    * @model containment="true"
    * @generated
    */
-  EList<Person> getPeople();
+  ExpNb getExpr();
 
   /**
-   * Returns the value of the '<em><b>Greetings</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.flowexp.flowexp.Greeting}.
+   * Sets the value of the '{@link org.xtext.example.flowexp.flowexp.Model#getExpr <em>Expr</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Expr</em>' containment reference.
+   * @see #getExpr()
+   * @generated
+   */
+  void setExpr(ExpNb value);
+
+  /**
+   * Returns the value of the '<em><b>Phase</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Greetings</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Phase</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Greetings</em>' containment reference list.
-   * @see org.xtext.example.flowexp.flowexp.FlowexpPackage#getModel_Greetings()
+   * @return the value of the '<em>Phase</em>' attribute.
+   * @see #setPhase(String)
+   * @see org.xtext.example.flowexp.flowexp.FlowexpPackage#getModel_Phase()
+   * @model
+   * @generated
+   */
+  String getPhase();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.flowexp.flowexp.Model#getPhase <em>Phase</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Phase</em>' attribute.
+   * @see #getPhase()
+   * @generated
+   */
+  void setPhase(String value);
+
+  /**
+   * Returns the value of the '<em><b>Modelname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Modelname</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Modelname</em>' attribute.
+   * @see #setModelname(String)
+   * @see org.xtext.example.flowexp.flowexp.FlowexpPackage#getModel_Modelname()
+   * @model
+   * @generated
+   */
+  String getModelname();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.flowexp.flowexp.Model#getModelname <em>Modelname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Modelname</em>' attribute.
+   * @see #getModelname()
+   * @generated
+   */
+  void setModelname(String value);
+
+  /**
+   * Returns the value of the '<em><b>Init</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Init</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Init</em>' containment reference.
+   * @see #setInit(Init)
+   * @see org.xtext.example.flowexp.flowexp.FlowexpPackage#getModel_Init()
    * @model containment="true"
    * @generated
    */
-  EList<Greeting> getGreetings();
+  Init getInit();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.flowexp.flowexp.Model#getInit <em>Init</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Init</em>' containment reference.
+   * @see #getInit()
+   * @generated
+   */
+  void setInit(Init value);
 
 } // Model

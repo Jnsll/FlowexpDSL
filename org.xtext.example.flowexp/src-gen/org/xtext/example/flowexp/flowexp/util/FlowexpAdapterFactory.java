@@ -81,14 +81,29 @@ public class FlowexpAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter casePerson(Person object)
+      public Adapter caseExpNb(ExpNb object)
       {
-        return createPersonAdapter();
+        return createExpNbAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseInit(Init object)
       {
-        return createGreetingAdapter();
+        return createInitAdapter();
+      }
+      @Override
+      public Adapter caseInitOne(InitOne object)
+      {
+        return createInitOneAdapter();
+      }
+      @Override
+      public Adapter caseExpNbBatch(ExpNbBatch object)
+      {
+        return createExpNbBatchAdapter();
+      }
+      @Override
+      public Adapter caseExpNbOne(ExpNbOne object)
+      {
+        return createExpNbOneAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -128,31 +143,76 @@ public class FlowexpAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.flowexp.flowexp.Person <em>Person</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.flowexp.flowexp.ExpNb <em>Exp Nb</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.flowexp.flowexp.Person
+   * @see org.xtext.example.flowexp.flowexp.ExpNb
    * @generated
    */
-  public Adapter createPersonAdapter()
+  public Adapter createExpNbAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.flowexp.flowexp.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.flowexp.flowexp.Init <em>Init</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.flowexp.flowexp.Greeting
+   * @see org.xtext.example.flowexp.flowexp.Init
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createInitAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.flowexp.flowexp.InitOne <em>Init One</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.flowexp.flowexp.InitOne
+   * @generated
+   */
+  public Adapter createInitOneAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.flowexp.flowexp.ExpNbBatch <em>Exp Nb Batch</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.flowexp.flowexp.ExpNbBatch
+   * @generated
+   */
+  public Adapter createExpNbBatchAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.flowexp.flowexp.ExpNbOne <em>Exp Nb One</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.flowexp.flowexp.ExpNbOne
+   * @generated
+   */
+  public Adapter createExpNbOneAdapter()
   {
     return null;
   }

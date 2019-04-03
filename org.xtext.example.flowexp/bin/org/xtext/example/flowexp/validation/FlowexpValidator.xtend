@@ -4,7 +4,6 @@
 package org.xtext.example.flowexp.validation
 
 import org.eclipse.xtext.validation.Check
-import org.xtext.example.flowexp.flowexp.Person
 import org.xtext.example.flowexp.flowexp.FlowexpPackage
 
 /**
@@ -24,16 +23,16 @@ class FlowexpValidator extends AbstractFlowexpValidator {
 //					INVALID_NAME)
 //		}
 //	}
-	@Check
-	def checkNameUppercase(Person person) {
-		val premierChar = person.name.substring(0, 1).toUpperCase
-		val premierCharBis = person.name.substring(0, 1)
-		if (premierChar != premierCharBis) {
-			error('''Name must start with an upper case''', 
-				person,
-				FlowexpPackage.eINSTANCE.person_Name
-			)
-		}
-	}
+//	@Check
+//	def checkNameUppercase(Person person) {
+//		val premierChar = person.name.substring(0, 1).toUpperCase
+//		val premierCharBis = person.name.substring(0, 1)
+//		if (premierChar != premierCharBis) {
+//			error('''Name must start with an upper case''', 
+//				person,
+//				FlowexpPackage.eINSTANCE.person_Name
+//			)
+//		}
+//	}
 
 }

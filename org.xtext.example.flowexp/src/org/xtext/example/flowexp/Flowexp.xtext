@@ -3,14 +3,37 @@ grammar org.xtext.example.flowexp.Flowexp with org.eclipse.xtext.common.Terminal
 generate flowexp "http://www.xtext.org/example/flowexp/Flowexp"
 
 Model:
-	'people'
-	people+=Person*
-	'greetings'
-	greetings+=Greeting*;
+	'Schema' ':' expr=ExpNb
+	'Phase' ':' phase=Phase
+	'Modelname' ':' modelname=STRING
+	'Init' ':' init=Init
 	
-Person:
-	"person" name=STRING ';'
 ;
-	
-Greeting:
-	'Hello' person=[Person] '!';
+
+ExpNb:
+	{ExpNbBatch} "batch" |
+	{ExpNbOne} "one"
+;
+
+Phase:
+	"init" | "forecast" | "whole"
+;
+
+Init :
+	InitOne | InitBatch
+;
+InitOne:
+	"template" filename+=STRING ("," filename+=STRING)*
+	"timestep" tval=INT
+	"period" pval=INT
+	"periodicity" Periodicity
+	"sea rise" srval=INT
+;
+
+Periodicity:
+	"daily"|"monthly"|"semester"
+;
+InitBatch:
+	"template"
+;
+

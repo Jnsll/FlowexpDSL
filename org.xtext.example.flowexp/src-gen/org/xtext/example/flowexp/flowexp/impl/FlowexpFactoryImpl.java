@@ -66,8 +66,11 @@ public class FlowexpFactoryImpl extends EFactoryImpl implements FlowexpFactory
     switch (eClass.getClassifierID())
     {
       case FlowexpPackage.MODEL: return createModel();
-      case FlowexpPackage.PERSON: return createPerson();
-      case FlowexpPackage.GREETING: return createGreeting();
+      case FlowexpPackage.EXP_NB: return createExpNb();
+      case FlowexpPackage.INIT: return createInit();
+      case FlowexpPackage.INIT_ONE: return createInitOne();
+      case FlowexpPackage.EXP_NB_BATCH: return createExpNbBatch();
+      case FlowexpPackage.EXP_NB_ONE: return createExpNbOne();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -89,10 +92,10 @@ public class FlowexpFactoryImpl extends EFactoryImpl implements FlowexpFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Person createPerson()
+  public ExpNb createExpNb()
   {
-    PersonImpl person = new PersonImpl();
-    return person;
+    ExpNbImpl expNb = new ExpNbImpl();
+    return expNb;
   }
 
   /**
@@ -100,10 +103,43 @@ public class FlowexpFactoryImpl extends EFactoryImpl implements FlowexpFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Greeting createGreeting()
+  public Init createInit()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    InitImpl init = new InitImpl();
+    return init;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InitOne createInitOne()
+  {
+    InitOneImpl initOne = new InitOneImpl();
+    return initOne;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExpNbBatch createExpNbBatch()
+  {
+    ExpNbBatchImpl expNbBatch = new ExpNbBatchImpl();
+    return expNbBatch;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExpNbOne createExpNbOne()
+  {
+    ExpNbOneImpl expNbOne = new ExpNbOneImpl();
+    return expNbOne;
   }
 
   /**

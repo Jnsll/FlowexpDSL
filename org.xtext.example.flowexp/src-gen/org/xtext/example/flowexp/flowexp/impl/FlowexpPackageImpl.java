@@ -10,11 +10,14 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.xtext.example.flowexp.flowexp.ExpNb;
+import org.xtext.example.flowexp.flowexp.ExpNbBatch;
+import org.xtext.example.flowexp.flowexp.ExpNbOne;
 import org.xtext.example.flowexp.flowexp.FlowexpFactory;
 import org.xtext.example.flowexp.flowexp.FlowexpPackage;
-import org.xtext.example.flowexp.flowexp.Greeting;
+import org.xtext.example.flowexp.flowexp.Init;
+import org.xtext.example.flowexp.flowexp.InitOne;
 import org.xtext.example.flowexp.flowexp.Model;
-import org.xtext.example.flowexp.flowexp.Person;
 
 /**
  * <!-- begin-user-doc -->
@@ -36,14 +39,35 @@ public class FlowexpPackageImpl extends EPackageImpl implements FlowexpPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass personEClass = null;
+  private EClass expNbEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass greetingEClass = null;
+  private EClass initEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass initOneEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expNbBatchEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expNbOneEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -123,7 +147,7 @@ public class FlowexpPackageImpl extends EPackageImpl implements FlowexpPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_People()
+  public EReference getModel_Expr()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -133,9 +157,9 @@ public class FlowexpPackageImpl extends EPackageImpl implements FlowexpPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Greetings()
+  public EAttribute getModel_Phase()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -143,9 +167,9 @@ public class FlowexpPackageImpl extends EPackageImpl implements FlowexpPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPerson()
+  public EAttribute getModel_Modelname()
   {
-    return personEClass;
+    return (EAttribute)modelEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -153,9 +177,9 @@ public class FlowexpPackageImpl extends EPackageImpl implements FlowexpPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getPerson_Name()
+  public EReference getModel_Init()
   {
-    return (EAttribute)personEClass.getEStructuralFeatures().get(0);
+    return (EReference)modelEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -163,9 +187,9 @@ public class FlowexpPackageImpl extends EPackageImpl implements FlowexpPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getGreeting()
+  public EClass getExpNb()
   {
-    return greetingEClass;
+    return expNbEClass;
   }
 
   /**
@@ -173,9 +197,79 @@ public class FlowexpPackageImpl extends EPackageImpl implements FlowexpPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getGreeting_Person()
+  public EClass getInit()
   {
-    return (EReference)greetingEClass.getEStructuralFeatures().get(0);
+    return initEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInitOne()
+  {
+    return initOneEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInitOne_Filename()
+  {
+    return (EAttribute)initOneEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInitOne_Tval()
+  {
+    return (EAttribute)initOneEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInitOne_Pval()
+  {
+    return (EAttribute)initOneEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getInitOne_Srval()
+  {
+    return (EAttribute)initOneEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpNbBatch()
+  {
+    return expNbBatchEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpNbOne()
+  {
+    return expNbOneEClass;
   }
 
   /**
@@ -209,14 +303,24 @@ public class FlowexpPackageImpl extends EPackageImpl implements FlowexpPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__PEOPLE);
-    createEReference(modelEClass, MODEL__GREETINGS);
+    createEReference(modelEClass, MODEL__EXPR);
+    createEAttribute(modelEClass, MODEL__PHASE);
+    createEAttribute(modelEClass, MODEL__MODELNAME);
+    createEReference(modelEClass, MODEL__INIT);
 
-    personEClass = createEClass(PERSON);
-    createEAttribute(personEClass, PERSON__NAME);
+    expNbEClass = createEClass(EXP_NB);
 
-    greetingEClass = createEClass(GREETING);
-    createEReference(greetingEClass, GREETING__PERSON);
+    initEClass = createEClass(INIT);
+
+    initOneEClass = createEClass(INIT_ONE);
+    createEAttribute(initOneEClass, INIT_ONE__FILENAME);
+    createEAttribute(initOneEClass, INIT_ONE__TVAL);
+    createEAttribute(initOneEClass, INIT_ONE__PVAL);
+    createEAttribute(initOneEClass, INIT_ONE__SRVAL);
+
+    expNbBatchEClass = createEClass(EXP_NB_BATCH);
+
+    expNbOneEClass = createEClass(EXP_NB_ONE);
   }
 
   /**
@@ -248,17 +352,30 @@ public class FlowexpPackageImpl extends EPackageImpl implements FlowexpPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    initOneEClass.getESuperTypes().add(this.getInit());
+    expNbBatchEClass.getESuperTypes().add(this.getExpNb());
+    expNbOneEClass.getESuperTypes().add(this.getExpNb());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_People(), this.getPerson(), null, "people", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Greetings(), this.getGreeting(), null, "greetings", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Expr(), this.getExpNb(), null, "expr", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModel_Phase(), ecorePackage.getEString(), "phase", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getModel_Modelname(), ecorePackage.getEString(), "modelname", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Init(), this.getInit(), null, "init", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(personEClass, Person.class, "Person", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPerson_Name(), ecorePackage.getEString(), "name", null, 0, 1, Person.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(expNbEClass, ExpNb.class, "ExpNb", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(greetingEClass, Greeting.class, "Greeting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getGreeting_Person(), this.getPerson(), null, "person", null, 0, 1, Greeting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(initEClass, Init.class, "Init", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(initOneEClass, InitOne.class, "InitOne", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getInitOne_Filename(), ecorePackage.getEString(), "filename", null, 0, -1, InitOne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInitOne_Tval(), ecorePackage.getEInt(), "tval", null, 0, 1, InitOne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInitOne_Pval(), ecorePackage.getEInt(), "pval", null, 0, 1, InitOne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getInitOne_Srval(), ecorePackage.getEInt(), "srval", null, 0, 1, InitOne.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(expNbBatchEClass, ExpNbBatch.class, "ExpNbBatch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(expNbOneEClass, ExpNbOne.class, "ExpNbOne", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

@@ -33,22 +33,49 @@ public interface FlowexpFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Person</em>'.
+   * Returns a new object of class '<em>Exp Nb</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Person</em>'.
+   * @return a new object of class '<em>Exp Nb</em>'.
    * @generated
    */
-  Person createPerson();
+  ExpNb createExpNb();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Init</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Init</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  Init createInit();
+
+  /**
+   * Returns a new object of class '<em>Init One</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Init One</em>'.
+   * @generated
+   */
+  InitOne createInitOne();
+
+  /**
+   * Returns a new object of class '<em>Exp Nb Batch</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exp Nb Batch</em>'.
+   * @generated
+   */
+  ExpNbBatch createExpNbBatch();
+
+  /**
+   * Returns a new object of class '<em>Exp Nb One</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exp Nb One</em>'.
+   * @generated
+   */
+  ExpNbOne createExpNbOne();
 
   /**
    * Returns the package supported by this factory.

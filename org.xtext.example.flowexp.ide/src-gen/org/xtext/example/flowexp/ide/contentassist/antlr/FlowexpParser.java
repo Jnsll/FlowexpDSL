@@ -31,13 +31,24 @@ public class FlowexpParser extends AbstractContentAssistParser {
 		}
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, FlowexpGrammarAccess grammarAccess) {
+			builder.put(grammarAccess.getExpNbAccess().getAlternatives(), "rule__ExpNb__Alternatives");
+			builder.put(grammarAccess.getPhaseAccess().getAlternatives(), "rule__Phase__Alternatives");
+			builder.put(grammarAccess.getInitAccess().getAlternatives(), "rule__Init__Alternatives");
+			builder.put(grammarAccess.getPeriodicityAccess().getAlternatives(), "rule__Periodicity__Alternatives");
 			builder.put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
-			builder.put(grammarAccess.getPersonAccess().getGroup(), "rule__Person__Group__0");
-			builder.put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
-			builder.put(grammarAccess.getModelAccess().getPeopleAssignment_1(), "rule__Model__PeopleAssignment_1");
-			builder.put(grammarAccess.getModelAccess().getGreetingsAssignment_3(), "rule__Model__GreetingsAssignment_3");
-			builder.put(grammarAccess.getPersonAccess().getNameAssignment_1(), "rule__Person__NameAssignment_1");
-			builder.put(grammarAccess.getGreetingAccess().getPersonAssignment_1(), "rule__Greeting__PersonAssignment_1");
+			builder.put(grammarAccess.getExpNbAccess().getGroup_0(), "rule__ExpNb__Group_0__0");
+			builder.put(grammarAccess.getExpNbAccess().getGroup_1(), "rule__ExpNb__Group_1__0");
+			builder.put(grammarAccess.getInitOneAccess().getGroup(), "rule__InitOne__Group__0");
+			builder.put(grammarAccess.getInitOneAccess().getGroup_2(), "rule__InitOne__Group_2__0");
+			builder.put(grammarAccess.getModelAccess().getExprAssignment_2(), "rule__Model__ExprAssignment_2");
+			builder.put(grammarAccess.getModelAccess().getPhaseAssignment_5(), "rule__Model__PhaseAssignment_5");
+			builder.put(grammarAccess.getModelAccess().getModelnameAssignment_8(), "rule__Model__ModelnameAssignment_8");
+			builder.put(grammarAccess.getModelAccess().getInitAssignment_11(), "rule__Model__InitAssignment_11");
+			builder.put(grammarAccess.getInitOneAccess().getFilenameAssignment_1(), "rule__InitOne__FilenameAssignment_1");
+			builder.put(grammarAccess.getInitOneAccess().getFilenameAssignment_2_1(), "rule__InitOne__FilenameAssignment_2_1");
+			builder.put(grammarAccess.getInitOneAccess().getTvalAssignment_4(), "rule__InitOne__TvalAssignment_4");
+			builder.put(grammarAccess.getInitOneAccess().getPvalAssignment_6(), "rule__InitOne__PvalAssignment_6");
+			builder.put(grammarAccess.getInitOneAccess().getSrvalAssignment_10(), "rule__InitOne__SrvalAssignment_10");
 		}
 	}
 	

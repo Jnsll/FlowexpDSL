@@ -3,11 +3,6 @@
  */
 package org.xtext.example.flowexp.validation;
 
-import com.google.common.base.Objects;
-import org.eclipse.xtend2.lib.StringConcatenation;
-import org.eclipse.xtext.validation.Check;
-import org.xtext.example.flowexp.flowexp.FlowexpPackage;
-import org.xtext.example.flowexp.flowexp.Person;
 import org.xtext.example.flowexp.validation.AbstractFlowexpValidator;
 
 /**
@@ -17,16 +12,4 @@ import org.xtext.example.flowexp.validation.AbstractFlowexpValidator;
  */
 @SuppressWarnings("all")
 public class FlowexpValidator extends AbstractFlowexpValidator {
-  @Check
-  public void checkNameUppercase(final Person person) {
-    final String premierChar = person.getName().substring(0, 1).toUpperCase();
-    final String premierCharBis = person.getName().substring(0, 1);
-    boolean _notEquals = (!Objects.equal(premierChar, premierCharBis));
-    if (_notEquals) {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Name must start with an upper case");
-      this.error(_builder.toString(), person, 
-        FlowexpPackage.eINSTANCE.getPerson_Name());
-    }
-  }
 }

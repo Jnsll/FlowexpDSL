@@ -26,9 +26,34 @@ public class FlowexpSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getInitBatchRule())
+			return getInitBatchToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getPeriodicityRule())
+			return getPeriodicityToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * InitBatch:
+	 * 	"template"
+	 * ;
+	 */
+	protected String getInitBatchToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "template";
+	}
+	
+	/**
+	 * Periodicity:
+	 * 	"daily"|"monthly"|"semester"
+	 * ;
+	 */
+	protected String getPeriodicityToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "daily";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {
